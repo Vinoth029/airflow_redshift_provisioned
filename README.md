@@ -184,7 +184,7 @@ with DAG(
         aws_conn_id="aws_default",
         poke_interval=60,
         timeout=3600,
-        mode="reschedule",
+        mode="reschedule",    #mode = poke(to keep the worker)  or reschedule(to release the worker)
     )
 
 
