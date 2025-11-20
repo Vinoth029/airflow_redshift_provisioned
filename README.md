@@ -237,7 +237,7 @@ with DAG(
         schema="staging",
         table="orders_stg",
         s3_bucket="{{ var.value.raw_orders_bucket }}",
-        s3_key="orders/{{ ds }}/",
+        s3_key="orders/{{ ds }}/",   # ds = DAG run date (execution date) in YYYY-MM-DD format (s3_key is one of the template_fields that supports jinja templating)
         redshift_conn_id="redshift_default",
         aws_conn_id="aws_default",
         copy_options=["FORMAT AS PARQUET"],
